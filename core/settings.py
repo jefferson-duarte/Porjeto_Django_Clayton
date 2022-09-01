@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # app local
     'blog',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -125,8 +127,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'STATIC_URL'
+STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / STATIC_URL
+
+MEDIA_URL = '/images/'
+MEDIA_ROOT = BASE_DIR / 'static/images'
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

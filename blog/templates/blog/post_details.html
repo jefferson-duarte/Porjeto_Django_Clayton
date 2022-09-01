@@ -12,7 +12,7 @@
     <h2>{{ post.subtitulo }} - {{ post.autor }}</h2>
 
     <p>
-        {{ post.conteudo }}
+        {{ post.conteudo|safe }}
     </p>
 </body>
 </html>
