@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" >
 
-    <title>Primeira Pagina</title>
+    <title>Academia Python - Blog</title>
 </head>
 
 <body>
@@ -23,138 +23,14 @@
             <div class="col-xl-8">
                 <header class="bg-dark my-2">
             
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                        <div class="container-fluid px-0">
-                            
-                            <a href="#" class="navbar-brand">Academia Python</a>
-            
-                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="true" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-            
-                            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link" aria-current="page">Blog</a>
-                                    </li>
-            
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Cursos</a>
-                                    </li>
-                                    
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Contato</a>
-                                    </li>
-                                    
-                                    <li class="nav-item">
-                                        <a href="#" class="nav-link">Login</a>
-                                    </li>
-            
-                                    <form class="d-flex">
-                                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-    
-                                        <button class="btn btn-outline-success" type="submit">Search</button>
-                                    </form>
-            
-                                </ul>
-                            </div>
-            
-                        </div>
-                    </nav>
+                    {% include 'fragments/navbar.html' %}
 
-                    <div class="container-fluid d-none d-lg-block px-0">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                        
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <svg class="bd-placeholder-img"
-                                    width="100%"
-                                    height="100%"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true"
-                                    preserveAspectRatio="xMidYMid slice"
-                                    focusable="false">
-    
-                                        <rect width="100%" height="100%" fill="#3A3276"/>
-    
-                                    </svg>
-    
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Conheça os cursos da Academia Python</h5>
-                                        <p>Aprenda a construir sites responsivos com Python, Django e Bootstrap 5</p>
-                                    </div>
-                                </div>
-    
-                                <div class="carousel-item">
-                                    <svg class="bd-placeholder-img"
-                                    width="100%"
-                                    height="100%"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true"
-                                    preserveAspectRatio="xMidYMid slice"
-                                    focusable="false">
-    
-                                        <rect width="100%" height="100%" fill="#198754"/>
-    
-                                    </svg>
-                                    
-                                    <div class="carousel-caption d-none d-md-block">
-                                        <h5>Siga-nos nas mídias sociais.</h5>
-                                        <p>
-                                            Conheça nosso canal do Youtube e receba dicas, tutoriais gratuitos e fique
-                                            por
-                                            dentro das novidades do mundo Geek.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <svg class="bd-placeholder-img"
-                                    width="100%"
-                                    height="100%"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    aria-hidden="true"
-                                    preserveAspectRatio="xMidYMid slice"
-                                    focusable="false">
-    
-                                        <rect width="100%" height="100%" fill="#ffc107"/>
-    
-                                    </svg>
-                                    
-                                    <div class="carousel-caption d-none d-md-block text-dark">
-                                        <h5>Entre em contato para receber descontos especiais!</h5>
-                                        <p>
-                                            Faça parte do nosso grupo do Telegram para tirar dúvidas conosco,
-                                            receber cupons de desconto e muito mais.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev"
-                            type="button"
-                            data-bs-target="#carouselExampleControls"
-                            data-bs-slide="prev">
-    
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-    
-                            <button class="carousel-control-next"
-                            type="button"
-                            data-bs-target="#carouselExampleControls"
-                            data-bs-slide="next">
-    
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
+                    {% include 'fragments/carousel.html' %}
             
                 </header>
-
             </div>
+
         </div>
-        
     </div>
 
     <main class="bg-light">
@@ -165,10 +41,13 @@
 
                         <div class="col-lg-8 d-flex">
                             <div class="card vh-75 vw-100">
-                                <img src="{{ post.0.imagem_capa.url }}" class="card-img-top"  alt="Imagem do Card">
-
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ post.0.titulo }}</h4>
+                                <a href="#">
+                                    <img src="{{ post.0.imagem_capa.url }}" class="card-img-top"  alt="Imagem do Card">
+                                </a>
+                                <div class="card-body pb-4">
+                                    <a href="#">
+                                        <h4 class="card-title">{{ post.0.titulo }}</h4>
+                                    </a>
                                     <p class="card-text">
                                         {{ post.0.resumo|safe }}
                                     </p>
@@ -176,6 +55,23 @@
                                     <p class="card-text">
                                         <small class="text-muted">{{ post.0.data_publicacao }}</small>
                                     </p>
+
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="span me-3 btn">
+                                                    <i class="fa-solid fa-heart"></i> Curtir
+                                                </div>
+                                                <div class="span me-3 btn">
+                                                    <i class="fa-solid fa-comment"></i> Comentar
+                                                </div>
+                                                <div class="span me-3 btn">
+                                                    <i class="fa-solid fa-share"></i> Compartilhar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -224,11 +120,29 @@
                         {% for post in post|slice:"1:5" %}
                             <div class="col d-flex">
                                 <div class="card vh-75 vw-100">
+                                    <a href="#">
                                         <img src="{{ post.imagem_capa.url }}" class="card-img-top img-350" alt="imagem capa">
-
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ post.titulo }}</h5>
+                                    </a>
+                                    <div class="card-body pb-3">
+                                        <a href="#">
+                                            <h5 class="card-title">{{ post.titulo }}</h5>
+                                        </a>
                                         <p class="card-text">{{ post.resumo|slice:":250"|safe }}...</p>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="d-flex justify-content-center">
+                                                    <div class="span me-3 btn">
+                                                        <i class="fa-solid fa-heart"></i> Curtir
+                                                    </div>
+                                                    <div class="span me-3 btn">
+                                                        <i class="fa-solid fa-comment"></i> Comentar
+                                                    </div>
+                                                    <div class="span me-3 btn">
+                                                        <i class="fa-solid fa-share"></i> Compartilhar
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -241,46 +155,7 @@
         </div>
     </main>
 
-    <footer class="bg-dark py-4 my-2">
-        <div class="container-fluid text-white">
-            <div class="row justify-content-center">
-
-                <div class="col-lg-2 text-left">
-                    <h5 class="text-uppercase fw-bold text-info">Onde somos?</h5>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum, voluptatem? Commodi aut consequatur accusamus nostrum 
-                    </p>
-                </div>
-
-                <div class="col-lg-4 text-left">
-                    <h5 class="text-uppercase fw-bold text-info">Onde queremos chegar?</h5>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis doloribus atque dolor eveniet alias quibusdam quos asperiores sapiente, necessitatibus eaque aspernatur impedit eius ducimus sunt libero, deleniti non sint repellendus.
-                    </p>
-                </div>
-
-                <div class="col-lg-2">
-                    <h5 class="text-uppercase fw-bold text-info">Siga-nos nas redes</h5>
-
-                    <p>
-                        <i class="fa-brands fa-youtube"></i>
-                        <a href="#" class="text-white" style="text-decoration:none;">YouTube</a> 
-                    </p>
-
-                    <p>
-                        <i class="fa-brands fa-github"></i>
-                        <a href="#" class="text-white" style="text-decoration:none;">GitHub</a>
-                    </p>
-
-                    <p>
-                        <i class="fa-brands fa-linkedin"></i>
-                        <a href="#" class="text-white" style="text-decoration:none;">Linkedin</a>
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </footer>
+    {% include 'fragments/footer.html' %}
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
