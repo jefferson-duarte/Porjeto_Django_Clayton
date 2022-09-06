@@ -165,16 +165,16 @@
 
                         <div class="col-lg-8 d-flex">
                             <div class="card vh-75 vw-100">
-                                <img src="{% static '/blog/img/django-livre-01.jpeg' %}" class="card-img-top"  alt="Imagem do Card">
+                                <img src="{{ post.0.imagem_capa.url }}" class="card-img-top"  alt="Imagem do Card">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Titulo do Post</h5>
+                                    <h4 class="card-title">{{ post.0.titulo }}</h4>
                                     <p class="card-text">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, rem incidunt. Quam qui officiis quaerat, atque saepe at sit cumque quis quae quas impedit illum dicta necessitatibus, distinctio similique? Nobis.
+                                        {{ post.0.resumo|safe }}
                                     </p>
 
                                     <p class="card-text">
-                                        <small class="text-muted">Publicado em 21/12/2012</small>
+                                        <small class="text-muted">{{ post.0.data_publicacao }}</small>
                                     </p>
                                 </div>
                             </div>
@@ -221,13 +221,14 @@
                     <hr class="my-4">
 
                     <div class="row row-cols-1 row-cols-md-2 g-4">
-                        {% for i in '0123' %}
-                            <div class="col">
-                                <div class="card">
-                                    <img src="{% static '/blog/img/django-02.jpeg' %}" class="card-img-top" alt="...">
+                        {% for post in post|slice:"1:5" %}
+                            <div class="col d-flex">
+                                <div class="card vh-75 vw-100">
+                                        <img src="{{ post.imagem_capa.url }}" class="card-img-top img-350" alt="imagem capa">
+
                                     <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <h5 class="card-title">{{ post.titulo }}</h5>
+                                        <p class="card-text">{{ post.resumo|slice:":250"|safe }}...</p>
                                     </div>
                                 </div>
                             </div>

@@ -3,7 +3,7 @@ from .models import Post
 
 
 def home(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all().order_by('-data_publicacao')[:5]
     context = {
         'post': posts,
     }
