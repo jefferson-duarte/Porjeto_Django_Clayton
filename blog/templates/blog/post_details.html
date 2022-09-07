@@ -34,7 +34,47 @@
         <div class="container-fluid">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
-                    {{ post.conteudo|safe }}
+                    <hr class="my-5">
+
+                    <div class="container-fluid my-4">
+                        <div class="flex-row d-flex my-3">
+                            <h1>{{ post.titulo }}</h1>
+                            
+                            <span class="d-flex justify-content-center align-items-center ms-5">
+                                
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Instagram">
+                                        <i class="fa-brands fa-instagram fa-xl"></i>
+                                    </span>
+                                </a>
+
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Instagram">
+                                        <i class="fa-brands fa-facebook fa-xl"></i>                                    
+                                    </span>
+                                </a>
+                                
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Instagram">
+                                        <i class="fa-brands fa-twitter fa-xl"></i>                                    
+                                    </span>
+                                </a>
+
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Instagram">
+                                        <i class="fa-solid fa-link fa-xl"></i>                                    
+                                    </span>
+                                </a>
+
+                            </span>
+                        </div>
+                    </div>
+
+                    <hr class="my-5">
+
+                    <article class="fs-4 px-5 mx-2">
+                        {{ post.conteudo|safe }}
+                    </article>
                 </div>
             </div>
         </div>
