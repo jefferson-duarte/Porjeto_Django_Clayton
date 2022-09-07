@@ -33,11 +33,11 @@
     <main class="bg-light">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-xl-8">
+                <div class="col-xl-8 border-start border-end">
                     <hr class="my-5">
 
-                    <div class="container-fluid my-4">
-                        <div class="flex-row d-flex my-3">
+                    <div class="container-fluid">
+                        <div class="flex-row d-flex my-2">
                             <h1>{{ post.titulo }}</h1>
                             
                             <span class="d-flex justify-content-center align-items-center ms-5">
@@ -49,19 +49,19 @@
                                 </a>
 
                                 <a href="#" class="text-decoration-none text-dark">
-                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Instagram">
+                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Facebook">
                                         <i class="fa-brands fa-facebook fa-xl"></i>                                    
                                     </span>
                                 </a>
                                 
                                 <a href="#" class="text-decoration-none text-dark">
-                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Instagram">
+                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Twitter">
                                         <i class="fa-brands fa-twitter fa-xl"></i>                                    
                                     </span>
                                 </a>
 
                                 <a href="#" class="text-decoration-none text-dark">
-                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar no Instagram">
+                                    <span class="ms-3" data-bs-toggle="toolipe" data-bs-placement="top" title="Compartilhar link">
                                         <i class="fa-solid fa-link fa-xl"></i>                                    
                                     </span>
                                 </a>
@@ -70,17 +70,81 @@
                         </div>
                     </div>
 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="d-flex flex-row align-items-center">
+                                <div class="rounded-circle border d-flex justify-content-center align-items-center bg-info avatar">
+                                    IMAGEM
+                                </div>
+
+                                <p class="mb-0">
+                                    <span class="text-muted justify-content-center">
+                                        <span class="mx-2 h5">
+                                            {{ post.autor }}
+                                        </span>
+
+                                        <span>
+                                            <i class="fa-solid fa-clock"></i>
+                                            <span>
+                                                30 min
+                                            </span>
+                                        </span>
+
+                                        <br>
+
+                                        <span class="mx-2"><i class="fa-solid fa-tags"></i></span>
+
+                                        <span>
+                                            <a href="#" class="text-decoration-none text-muted">#Básico</a>
+                                        </span>
+                                        
+                                        <span>
+                                            <a href="#" class="text-decoration-none text-muted">#Python</a>
+                                        </span>
+
+                                        <br>
+
+                                        <span class="mx-2">
+                                            {{ post.subtitulo }}
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <hr class="my-5">
 
-                    <article class="fs-4 px-5 mx-2">
+                    <article class="fs-4 px-lg-5 mx-lg-2">
                         {{ post.conteudo|safe }}
                     </article>
+
+                    <hr class="my-5">
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex-justify-content-start">
+                                    <div class="span me-3 btn">
+                                        <i class="fa-solid fa-heart fa-2xl"></i> Curtir
+                                    </div>
+                                    
+                                    <div class="span me-3 btn">
+                                        <i class="fa-solid fa-comment fa-2xl"></i> Comentar
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
     </main>
 
     {% include 'fragments/footer.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 </html>
