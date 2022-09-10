@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Blog</title>
@@ -30,14 +31,53 @@
     <main class="bg-light">
         <div class="container-fluid">
             <div class="row justify-content-center">
-                <div class="col-xl-8">
-                    Alguma coisa
+                <div class="col-xl-7">
+
+                    {% for post in post %}
+    
+                        <div class="card mx-5 px-5 py-2 mb-2">
+                            <a href="{% url 'post_detail' post.id %}">
+                                <img src="{{ post.imagem_capa.url }}" class="card-img-top"  alt="Imagem do Card">
+                            </a>
+                            <div class="card-body pb-4">
+                                <a href="{% url 'post_detail' post.id %}" class="text-decoration-none text-dark">
+                                    <h4 class="card-title">{{ post.titulo }}</h4>
+                                </a>
+                                <p class="card-text">
+                                    {{ post.resumo|safe }}
+                                </p>
+
+                                <p class="card-text">
+                                    <small class="text-muted">{{ post.data_publicacao }}</small>
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-flex justify-content-center">
+                                            <div class="span me-3 btn">
+                                                <i class="fa-solid fa-heart"></i> Curtir
+                                            </div>
+                                            <div class="span me-3 btn">
+                                                <i class="fa-solid fa-comment"></i> Comentar
+                                            </div>
+                                            <div class="span me-3 btn">
+                                                <i class="fa-solid fa-share"></i> Compartilhar
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
                 </div>
             </div>
         </div>
     </main>
 
-    {% include 'fragments/footer.html' with var_position='fixed-bottom' %}
+    {% include 'fragments/footer.html' with var_position='fixed-sticky' %}
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
