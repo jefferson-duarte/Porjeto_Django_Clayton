@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 
     # app local
     'blog',
+    'autenticacao',
+    'contato',
+    'cursos', 
     'exemplos',
     'ckeditor',
     'ckeditor_uploader',
