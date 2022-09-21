@@ -17,3 +17,6 @@ class Contato(models.Model):
     nome = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     mensagem = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.assunto

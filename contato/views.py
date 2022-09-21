@@ -19,6 +19,9 @@ def processa_contato(request):
             try:
                 # enviar_email(contato)
                 enviar_email_com_template(contato)
+                obj_contato = contato.save()
+                obj_contato.save()
+                
                 messages.success(request, 'Mensagem enviado com sucesso!')
                 return render(request, 'contato/contato.html', {'form': FormContato()})  # noqa
             except BadHeaderError:
