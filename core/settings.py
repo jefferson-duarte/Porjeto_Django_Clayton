@@ -47,9 +47,11 @@ INSTALLED_APPS = [
     'autenticacao',
     'contato',
     'cursos',
+    'contas',
     'exemplos',
     'ckeditor',
     'ckeditor_uploader',
+
 ]
 
 MIDDLEWARE = [
